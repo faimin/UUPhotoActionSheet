@@ -49,8 +49,11 @@
 - (void)configBlackColorUI{
 
     [self addSubview:self.btnSend];
+    //MARK:modify by saber
+    /*
     [self addSubview:self.imgOriginal];
     [self addSubview:self.btnOriginal];
+     */
     [self addSubview:self.lblNumOfSelect];
     
     self.backgroundColor = COLOR_WITH_RGB(87,87,87,.6f);
@@ -159,8 +162,8 @@
         _btnPreview = [UIButton buttonWithType:UIButtonTypeCustom];
         _btnPreview.frame = CGRectMake(10, 0, 50, 50);
         [_btnPreview setTitle:@"预览" forState:UIControlStateNormal];
-        [_btnPreview setTitleColor:COLOR_WITH_RGB(94,201,252,1) forState:UIControlStateNormal];
-        _btnPreview.titleLabel.font = [UIFont systemFontOfSize:16];
+        [_btnPreview setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btnPreview.titleLabel.font = [UIFont systemFontOfSize:14];
         _btnPreview.backgroundColor = [UIColor clearColor];
         _btnPreview.enabled = NO;
     }
@@ -174,9 +177,9 @@
         
         _btnSend = [UIButton buttonWithType:UIButtonTypeCustom];
         _btnSend.frame = CGRectMake(ScreenWidth -60, 0, 50, 50);
-        [_btnSend setTitle:@"发送" forState:UIControlStateNormal];
-        [_btnSend setTitleColor:COLOR_WITH_RGB(94,201,252,1) forState:UIControlStateNormal];
-        _btnSend.titleLabel.font = [UIFont systemFontOfSize:16];
+        [_btnSend setTitle:@"确定" forState:UIControlStateNormal];
+        [_btnSend setTitleColor:[UIColor redColor]/*COLOR_WITH_RGB(94,201,252,1)*/ forState:UIControlStateNormal];
+        _btnSend.titleLabel.font = [UIFont systemFontOfSize:14];
         _btnSend.backgroundColor = [UIColor clearColor];
         _btnSend.enabled = NO;
         

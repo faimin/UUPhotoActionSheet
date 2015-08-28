@@ -61,7 +61,7 @@
     self.navigationController.navigationBar.barStyle    = UIBarStyleBlackTranslucent;
     
     
-    self.navigationItem.title = @"相册";
+    self.navigationItem.title = @"相机胶卷";
     UIBarButtonItem *barCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消"
                                                                   style:UIBarButtonItemStylePlain
                                                                  target:self
@@ -217,10 +217,15 @@
     if (!_collectionView) {
         
         UICollectionViewFlowLayout *flowLayout= [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumInteritemSpacing = 0;
-        flowLayout.minimumLineSpacing = 3;
+        flowLayout.minimumInteritemSpacing = 10;
+        flowLayout.minimumLineSpacing = 11.5;
+        /*
         NSInteger size = [UIScreen mainScreen].bounds.size.width / 4 -1;
         if (size % 2 != 0) size -= 1;
+        */
+        
+        //MARK:modify by saber
+        NSInteger size = ([UIScreen mainScreen].bounds.size.width - 20 - 20) / 3;
         
         flowLayout.itemSize = CGSizeMake(size, size);
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -230,6 +235,7 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        _collectionView.contentInset = UIEdgeInsetsMake(10, 10, 0, 10);
 
         [_collectionView registerClass:[UUThumbnailCollectionCell class]
             forCellWithReuseIdentifier:[UUThumbnailCollectionCell cellReuseIdentifier]];

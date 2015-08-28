@@ -41,8 +41,8 @@
     [[UUAssetManager sharedInstance] getGroupList:^(NSArray *obj) {
         
         [self.tableView reloadData];
-        
-        [self.navigationController pushViewController:UUPhotoCollectionViewController.new animated:NO];
+        //MARK:modify by saber
+        //[self.navigationController pushViewController:UUPhotoCollectionViewController.new animated:NO];
     }];
 }
 
@@ -53,7 +53,7 @@
     self.navigationController.navigationBar.barStyle    = UIBarStyleBlackTranslucent;
     
     
-    self.navigationItem.title = @"相册";
+    self.navigationItem.title = @"相机胶卷";
     UIBarButtonItem *barCancel = [[UIBarButtonItem alloc] initWithTitle:@"取消"
                                                                style:UIBarButtonItemStylePlain
                                                               target:self

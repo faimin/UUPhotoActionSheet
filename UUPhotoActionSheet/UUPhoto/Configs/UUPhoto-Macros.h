@@ -23,14 +23,23 @@ return sharedInstance; \
 }
 #endif
 
-//屏幕宽度高度
+///屏幕宽度高度
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
-//颜色
+///颜色
 #define COLOR_WITH_RGB(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
 
-//十进制颜色
+///十进制颜色
 #define COLOR_WITH_RGB(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a]
+
+///十六进制颜色
+#define COLOR_RGBA(r, g, b, a) \
+[UIColor colorWithRed : (r) / 255.0 green : (g) / 255.0 blue : (b) / 255.0 alpha : a]
+#define COLOR_HEXA(hexValue, alpha) \
+COLOR_RGBA( ( (hexValue) >> 16 ) & 0xff, ( (hexValue) >> 8 ) & 0xff, ( (hexValue) >> 0 ) & 0xff, alpha )
+
+#define COLOR_WITH_HEX(hexValue) COLOR_HEXA(hexValue, 1 )
+
 
 #endif

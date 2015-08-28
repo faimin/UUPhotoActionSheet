@@ -52,10 +52,10 @@
     
     [self addSubview:self.sheetView];
     
-    [self.sheetView addSubview:self.btnCancel];
+    //[self.sheetView addSubview:self.btnCancel];
     [self.sheetView addSubview:self.btnAlbum];
     [self.sheetView addSubview:self.btnCamera];
-    [self.sheetView addSubview:self.thumbnailView];
+    //[self.sheetView addSubview:self.thumbnailView];
 
     [self configNotification];
 }
@@ -186,7 +186,9 @@
     [_btnCamera setTitle:@"拍照" forState:UIControlStateNormal];
     
     CGRect frame = _sheetView.frame;
-    frame.origin.y = ScreenHeight -350;
+    //MARK:modify by saber
+    frame.origin.y = ScreenHeight -(350-190-50-5+2);
+    
     [UIView animateWithDuration:.25f animations:^{
         
         _sheetView.frame = frame;
@@ -230,10 +232,11 @@
 - (UIView *)getSheetView{
 
     if (!_sheetView) {
+        //MARK:modify by saber
+        CGRect frame = CGRectMake(0, ScreenHeight, ScreenWidth, 350-190-50+2);
         
-        CGRect frame = CGRectMake(0, ScreenHeight, ScreenWidth, 350);
         _sheetView = [[UIView alloc] initWithFrame:frame];
-        _sheetView.backgroundColor = COLOR_WITH_RGB(230,231,234,1);
+        _sheetView.backgroundColor = COLOR_WITH_HEX(0xeaeaea);
         
     }
     
@@ -262,9 +265,9 @@
     if (!_btnCamera) {
         
         _btnCamera = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnCamera.frame = CGRectMake(0, CGRectGetMinY(_btnAlbum.frame) -51, ScreenWidth, 50);
+        _btnCamera.frame = CGRectMake(0, CGRectGetMinY(_btnAlbum.frame) - 55, ScreenWidth, 50);
         [_btnCamera setTitle:@"拍照" forState:UIControlStateNormal];
-        [_btnCamera setTitleColor:COLOR_WITH_RGB(94,201,252,1) forState:UIControlStateNormal];
+        [_btnCamera setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _btnCamera.backgroundColor = [UIColor whiteColor];
         
         [_btnCamera addTarget:self action:@selector(onClickCamera:) forControlEvents:UIControlEventTouchUpInside];
@@ -279,9 +282,10 @@
     if (!_btnAlbum) {
         
         _btnAlbum = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnAlbum.frame = CGRectMake(0, CGRectGetMinY(_btnCancel.frame) -60, ScreenWidth, 50);
-        [_btnAlbum setTitle:@"相册" forState:UIControlStateNormal];
-        [_btnAlbum setTitleColor:COLOR_WITH_RGB(94,201,252,1) forState:UIControlStateNormal];
+        //_btnAlbum.frame = CGRectMake(0, CGRectGetMinY(_btnCancel.frame) -60, ScreenWidth, 50);
+        _btnAlbum.frame = CGRectMake(0, CGRectGetHeight(_sheetView.frame) - 57, ScreenWidth, 50);
+        [_btnAlbum setTitle:@"从相册选择" forState:UIControlStateNormal];
+        [_btnAlbum setTitleColor:[UIColor blackColor]/*COLOR_WITH_RGB(94,201,252,1)*/ forState:UIControlStateNormal];
         _btnAlbum.backgroundColor = [UIColor whiteColor];
         
         [_btnAlbum addTarget:self action:@selector(onClickAlbum:) forControlEvents:UIControlEventTouchUpInside];

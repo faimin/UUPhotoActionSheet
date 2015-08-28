@@ -26,7 +26,7 @@
     
     self.navigationItem.title = @"UUPhotoActionSheet";
     
-    _sheet = [[UUPhotoActionSheet alloc] initWithMaxSelected:9
+    _sheet = [[UUPhotoActionSheet alloc] initWithMaxSelected:3
                                                    weakSuper:self];
     
     _sheet.delegate = self;
@@ -49,7 +49,8 @@
 
 #pragma mark - Custom Deledate
 
-- (void)actionSheetDidFinished:(NSArray *)obj{
+- (void)actionSheetDidFinished:(NSArray *)obj
+{
 
     NSLog(@"已发送 %lu 图片",(unsigned long)obj.count);
 }

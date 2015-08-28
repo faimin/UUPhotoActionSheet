@@ -114,8 +114,8 @@
 		2A37ED4C1B4FDD8A0083B5FE /* UUPhotoActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				2A37ED731B4FDE5A0083B5FE /* Demo */,
 				2A37ED741B4FDE5A0083B5FE /* UUPhoto */,
+				2A37ED731B4FDE5A0083B5FE /* Demo */,
 				2A37ED511B4FDD8A0083B5FE /* AppDelegate.h */,
 				2A37ED521B4FDD8A0083B5FE /* AppDelegate.m */,
 				2A37ED571B4FDD8A0083B5FE /* Main.storyboard */,

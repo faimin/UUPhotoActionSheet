@@ -342,7 +342,7 @@
     if (!_btnSelected) {
         
         _btnSelected = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btnSelected.frame = CGRectMake(0, 0, 25, 25);
+        _btnSelected.frame = CGRectMake(0, 0, 20, 20);
         [_btnSelected setImage:[UIImage imageNamed:@"ImageSelectedOff"] forState:UIControlStateNormal];
         [_btnSelected addTarget:self action:@selector(onClickSelected:) forControlEvents:UIControlEventTouchUpInside];
 
